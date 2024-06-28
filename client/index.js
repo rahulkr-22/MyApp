@@ -1,5 +1,8 @@
+const API_END_POINT='http://localhost:8000'
+//const API_END_POINT='${API_END_POINT}'
+
 document.addEventListener('DOMContentLoaded',function(){
-    fetch('http://localhost:8000/getAll')
+    fetch(`${API_END_POINT}/getAll`)
     .then(res=>res.json())
     .then(data=> loadHTMLTable(data['data']))
     ;
@@ -22,7 +25,7 @@ const searchBtn=document.querySelector('#search-btn');
 searchBtn.onclick = function(){
     const searchValue= document.querySelector('#search-input').value;
 
-    fetch('http://localhost:8000/search/' + searchValue)
+    fetch(`${API_END_POINT}/search/` + searchValue)
     .then(res=>res.json())
     .then(data=> loadHTMLTable(data['data']))
     ;
@@ -41,7 +44,7 @@ updateBtn.onclick = function() {
 
     // console.log(updateNameInput);
 
-    fetch('http://localhost:8000/update', {
+    fetch(`${API_END_POINT}/update`, {
         method: 'PATCH',
         headers: {
             'Content-type' : 'application/json'
@@ -60,7 +63,7 @@ updateBtn.onclick = function() {
 }
 
 function deleteRowById(id){
-    fetch('http://localhost:8000/delete/' + id,{
+    fetch(`${API_END_POINT}/delete/` + id,{
         method: 'DELETE'
     })
     .then(res=>res.json())
@@ -80,7 +83,7 @@ addBtn.onclick= function(){
     const name=nameInput.value;
     nameInput.value="";
 
-    fetch('http://localhost:8000/insert',{
+    fetch(`${API_END_POINT}/insert`,{
         headers:{
             'Content-type':'application/json'
         },
