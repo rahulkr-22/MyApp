@@ -1,18 +1,109 @@
-
-main{
-    width: 50%;
-    margin: 50px auto;
-    text-align: center;
-}
-table{
-    margin: 50px auto;
+/* Reset default margins and paddings */
+html, body, main, table, th, td {
+    margin: 0;
+    padding: 0;
 }
 
-table,th,td{
+/* Style for the main container */
+main {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+/* Flexbox layout for input container */
+.input-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+/* Style for the label */
+label {
+    font-weight: bold;
+    margin-bottom: 5px; /* Space between label and input */
+}
+
+/* Style for text input fields */
+input[type="text"] {
+    padding: 8px; /* Increased padding for input */
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 200px;
+}
+
+/* Style for buttons */
+button {
+    padding: 8px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #fff;
+    width: 100px; /* Set width for all buttons */
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Additional spacing and alignment */
+br {
+    line-height: 20px;
+}
+
+/* Style for the search input container */
+#search-input {
+    margin-right: 10px;
+}
+
+/* Style for the table */
+table {
+    width: 100%;
     border-collapse: collapse;
-    border: 1px solid #000;
+    margin-top: 20px;
 }
 
-th,td{
-    padding: 5px;
+/* Style for table headers */
+th {
+    background-color: #f2f2f2;
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Style for table cells */
+td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Style for delete and edit buttons in the table */
+.delete-btn, .edit-btn, #add-name-btn, #search-btn, #update-row-btn {
+    padding: 8px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #fff;
+    width: 100px;
+    margin-bottom: 10px;
+}
+
+.delete-btn:hover, .edit-btn:hover, #add-name-btn:hover, #search-btn:hover, #update-row-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Style for the hidden update section */
+#update-row {
+    margin-top: 20px;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    input[type="text"], button {
+        width: 100%;
+    }
 }
