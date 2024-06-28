@@ -55,6 +55,8 @@ br {
 
 /* Style for the search input container */
 #search-input {
+    font-size:medium;
+    padding:0.7%;
     margin-right: 10px;
 }
 
