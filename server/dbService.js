@@ -80,6 +80,40 @@ class DbService{
         
 
     }
+
+    async updateNameById(id,name){
+        try {
+            id=parseInt(id,10);
+            const res=await new Promise((resolve,reject)=>{
+                const query="UPDATE names SET name = ? WHERE id = ?";
+    
+                connection.query(query, [name,id],(err,result)=>{
+                    if(err) reject(new Error(err.message));
+                    resolve(result.affectedRows);
+                })
+            });
+            return res === 1?true:false;
+        } catch (error) {
+            console.log(error)
+            return false;
+        }
+    }
+
+    async searchByName(name){
+        try {
+            const res=await new Promise((resolve,reject)=>{
+                const query="SELECT * FROM names WHERE name = ?;";
+
+                connection.query(query,[name], (err,results)=>{
+                    if(err) reject(new Error(err.message));
+                    resolve(results);
+                })
+            })
+            return res;
+        } catch (error) {
+            console.log(error)
+        }
+    }
 }
 
 
