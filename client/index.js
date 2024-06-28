@@ -1,5 +1,5 @@
-const API_END_POINT='http://localhost:8000'
-//const API_END_POINT='${API_END_POINT}'
+//const API_END_POINT='http://localhost:8000'
+const API_END_POINT='https://myapp-pyxt.onrender.com'
 
 document.addEventListener('DOMContentLoaded',function(){
     fetch(`${API_END_POINT}/getAll`)
